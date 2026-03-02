@@ -1,0 +1,44 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /lowboy
+
+# application.yml
+# java -jar xxx.jar --spring.profiles.active=dev
+spring:
+  profiles:
+    active: @env@
+  datasource:
+    name: aidev
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/aidev?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: aidev
+    password: aidev123
+#  mybatis:
+#    check-config-location: true                             # 是否检测MyBatis运行参数配置文件
+#    config-location: classpath:/mybatis-config.xml          # 指定MyBatis运行参数配置文件位置
+#    mapper-locations: classpath:/mapper/**/*.xml            # 注册XML映射器
+#    type-aliases-package: test.springboot.model             # 配置Java类型包名
+#    type-handlers-package: test.springboot.handlers         # 配置类型处理器包名
+#    executor-type: SIMPLE                                   # 指定执行器类型
+#    configuration:
+#      default-fetch-size: 20
+#      default-statement-timeout: 30
+
+# 多配置源参考（#）
+#  datasource:
+#    primary:
+#      url: jdbc:mysql://localhost:3306/primarydb
+#      username: user1
+#      password: pass1
+#    secondary:
+#      url: jdbc:mysql://localhost:3306/secondarydb
+#      username: user2
+#      password: pass2
+
+
+logging:
+  level:
+    root: INFO
+#    com.yourpackage: DEBUG
+
